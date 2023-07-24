@@ -9,6 +9,11 @@ import CupidoMusical from '../components/CupidoMusical/CupidoMusical';
 import MusicaContextual from '../components/MusicaContextual/MusicaContextual';
 
 const AppRoutes = createBrowserRouter([
+    {
+    //  *
+    path: '/',
+    element: <h1>Auden</h1>
+  },
   {
     //  Login
     path: '/login',
@@ -20,6 +25,7 @@ const AppRoutes = createBrowserRouter([
     element: <Register />
   },
   {
+    // ? Como hacer para mostrar esta pagina solo si esta logueado?
     // Inicio
     path: '/dashboard',
     element: <Root />,
