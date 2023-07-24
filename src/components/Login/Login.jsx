@@ -19,11 +19,13 @@ function Login() {
 
       if (response.status === 200 && response.data.accessToken) {
         console.log('Inicio de sesión exitoso para el usuario:', response.data.user.email);
+        console.log("token:", response.data.accessToken) //! VER 
 
         // Se guarda el token de acceso en el estado global de la aplicación
         setToken(response.data.accessToken);
 
         // Redirige al usuario a la Home ('dashboard') si el inicio de sesión fue exitoso. 
+        // ? Cambiar por redirect
         window.location.href = '/dashboard';
       } else {
         console.error('Error en el inicio de sesión:', response.data.message);
@@ -32,6 +34,7 @@ function Login() {
       console.error('Error en el inicio de sesión:', error);
     }
   };
+  
 
   return (
     <>
