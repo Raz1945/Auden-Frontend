@@ -6,9 +6,14 @@ import './estilo.css';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // Nuevo estado para controlar la visibilidad de la contraseña
+  const [showPassword, setShowPassword] = useState(false);
+  const [isFormComplete, setIsFormComplete] = useState(false);
   const { setToken } = useAuth();
   const apiUrl = import.meta.env.VITE_API_BACKEND_URL;
+
+  const checkFormCompleteness = () => {
+    setIsFormComplete(email.trim() !== '' && password.trim() !== '');
+  };
 
   const handleLogin = async () => {
     const loginData = {
@@ -21,13 +26,9 @@ function Login() {
 
       if (response.status === 200 && response.data.accessToken) {
         console.log('Inicio de sesión exitoso para el usuario:', response.data.user.email);
-        console.log("token:", response.data.accessToken) //! VER 
+        console.log("token:", response.data.accessToken);
 
-        // Se guarda el token de acceso en el estado global de la aplicación
         setToken(response.data.accessToken);
-
-        // Redirige al usuario a la Home ('dashboard') si el inicio de sesión fue exitoso. 
-        // ? Cambiar por redirect
         window.location.href = '/dashboard';
       } else {
         console.error('Error en el inicio de sesión:', response.data.message);
@@ -36,8 +37,7 @@ function Login() {
       console.error('Error en el inicio de sesión:', error);
     }
   };
-  
-  // Función para alternar la visibilidad de la contraseña
+
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
@@ -51,15 +51,17 @@ function Login() {
         </div>
         <div className='box_login'>
           <p>Nombre de usuario o E-mail:</p>
-          <input type="email" onChange={(e) => setEmail(e.target.value)} />
+          <input type="email" onChange={(e) => setEmail(e.target.value)} onBlur={checkFormCompleteness} />
           <p>Contraseña:</p>
           <div className="password-input">
-            <input type={showPassword ? "text" : "password"} onChange={(e) => setPassword(e.target.value)} />
+            <input id='input_password' type={showPassword ? "text" : "password"} onChange={(e) => setPassword(e.target.value)} onBlur={checkFormCompleteness} />
             <button type="button" onClick={togglePasswordVisibility}>
-              {showPassword ? "O" : "M"}
+              {showPassword ? "Ocultar" : "Mostrar"}
             </button>
           </div>
-          <button onClick={handleLogin} className='btn_login'>Iniciar sesión</button>
+          <button onClick={handleLogin} className={`btn_ ${isFormComplete ? 'btn_complete' : ''}`}>
+            Iniciar sesión
+          </button>
           <button type="submit" className='btn_offborder'>¿Olvidaste tu contraseña?</button>
         </div>
       </div>

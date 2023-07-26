@@ -60,4 +60,18 @@ input{
     border-radius: 0px 16px 0px 16px;
     margin-bottom: 40px;
 }
-
+#input_password{
+    border: black 2px solid;
+}
+.btn_  {
+    background-color: rgb(146, 146, 146); /* Color predeterminado del botón */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+  
+  /* Estilo para el botón cuando el formulario está completo */
+.btn_complete {
+    background-color: #FF8E0A; /* Cambia el color del botón cuando el formulario está completo */
+}
