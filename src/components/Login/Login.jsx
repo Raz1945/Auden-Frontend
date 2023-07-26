@@ -18,15 +18,15 @@ function Login() {
       const response = await axios.post(`${apiUrl}/login`, loginData);
 
       if (response.status === 200 && response.data.accessToken) {
-        console.log('Inicio de sesión exitoso para el usuario:', response.data.user.email);
-        console.log("token:", response.data.accessToken) //! VER 
+        console.log("respuesta", response.data.accessToken)
 
+        console.log('Inicio de sesión exitoso para el usuario:', response.data.user.email);
         // Se guarda el token de acceso en el estado global de la aplicación
         setToken(response.data.accessToken);
+        localStorage.setItem('jwtToken', response.data.accessToken); //* Solucion
 
-        // Redirige al usuario a la Home ('dashboard') si el inicio de sesión fue exitoso. 
-        // ? Cambiar por redirect
-        window.location.href = '/dashboard';
+        // Redirige al usuario a la Home ('dashboard/home') si el inicio de sesión fue exitoso. 
+        window.location.href = '/dashboard/home'; // ? Cambiar por redirect
       } else {
         console.error('Error en el inicio de sesión:', response.data.message);
       }

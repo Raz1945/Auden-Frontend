@@ -1,30 +1,22 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+// import { useAuth } from '../../context/AuthContext';
+import Navbar from '../Others/Navbar/Navbar';
+import AppContainer from '../Others/AppContainer/AppContainer';
 
 const Dashboard = () => {
   // ...
+  // const { token } = useAuth();
+
+  //* Solucion 
+  const jwtToken = localStorage.getItem('jwtToken');
+  (jwtToken == null) ? (window.location.href = '/login') : console.log("verificó el token")
+
   return (
     <>
-      <h1>Hola estas en la dashboard</h1>
-      <div>
-        <ul>
-          <li>
-            <Link to={`home`}>Inicio</Link>
-          </li>
-          <li>
-            <Link to={`search`}>Buscar</Link>
-          </li>
-          <li>
-            <Link to={`profile`}>Perfil</Link>
-          </li>
-          <li>
-            <Link to={`friends`}>Amigos</Link>
-          </li>
-        </ul>
-      </div>
-
-      <div>
+      <AppContainer>
         <Outlet />
-      </div>
+        <Navbar />
+      </AppContainer>
     </>
   );
 }
