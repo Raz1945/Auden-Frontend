@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import './estilo.css';
 
 
@@ -27,7 +28,9 @@ function EmailInput() {
         value={email}
         onChange={handleEmailChange}
       />
-      <button className="btn_orange btn btn_crearcuenta">Continuar</button>
+      <NavLink to='/crearCuenta' className="btn_orange btn btn_crearcuenta">
+        Continuar
+      </NavLink>
     </div>
   );
 }

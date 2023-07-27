@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
+import { NavLink } from 'react-router-dom';
 import './estilo.css';
 
 function Login() {
@@ -62,7 +63,9 @@ function Login() {
           <button onClick={handleLogin} className={`btn_ ${isFormComplete ? 'btn_complete' : ''}`}>
             Iniciar sesión
           </button>
-          <button type="submit" className='btn_offborder'>¿Olvidaste tu contraseña?</button>
+          <NavLink to='/Recuperarcontraseña' className='btn_offborder'>
+            ¿Olvidaste tu contraseña?
+          </NavLink>
         </div>
       </div>
     </>
