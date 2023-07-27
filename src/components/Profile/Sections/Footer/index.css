@@ -1,0 +1,24 @@
+/* Mobile */
+@media (max-width: 390px) {
+    .footer__conteiner{
+        height: 0vh;
+    }
+
+    .footer__icons-wrapper{
+        display: flex;
+        width: 100vw;
+        height: 10vh;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .footer__icon-container{
+        width: 40vh;
+        height: 30vw;
+        border: 1px;
+    }
+    .footer__icon{
+        width: 40px;
+        height: 40px;
+    }
+}

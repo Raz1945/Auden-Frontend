@@ -7,6 +7,8 @@ import Search from '../components/Search/Search';
 import Home from '../components/Home/Home';
 import CupidoMusical from '../components/CupidoMusical/CupidoMusical';
 import MusicaContextual from '../components/MusicaContextual/MusicaContextual';
+import Profile from '../components/Profile/Profile';
+import Configuration from '../components/Configuracion';
 
 const AppRoutes = createBrowserRouter([
     {
@@ -41,13 +43,14 @@ const AppRoutes = createBrowserRouter([
       },
       {// Perfil
         path: 'profile',
-        element: <h1>Perfil</h1>
+        element: <Profile/>
       },
       {// Amigos
         path: 'friends',
         element: <h1>Amigos</h1>
       },
     ]
+    
   },
   {
     // Cupido Musical
@@ -57,6 +60,10 @@ const AppRoutes = createBrowserRouter([
   {// Musica Contextual
     path: 'musicaContextual',
     element: <MusicaContextual />
+  },
+  {// Configuración
+    path: 'configuration',
+    element: <Configuration/>
   },
 ]);
 

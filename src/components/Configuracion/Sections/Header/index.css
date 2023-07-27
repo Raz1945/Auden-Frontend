@@ -1,0 +1,27 @@
+/* Mobile */
+@media (max-width: 390px) {
+    .header__configuration-wrapper{
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        margin: 2rem 2.5rem;
+        gap: 4rem;
+    }
+
+    .header__configuration-btn{
+        background-color: transparent;
+        border: none;
+    }
+
+    .header__arrow{
+        width: 20px;
+        height: 20px;
+    }
+    .header__title{
+        font-family: 'Rubik', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 1.5px;
+    }
+}

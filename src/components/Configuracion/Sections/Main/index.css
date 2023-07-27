@@ -1,0 +1,44 @@
+/* Mobile */
+@media (max-width: 390px) {
+    .main__wrapper{
+        height: 65vh;
+        margin-top: 1rem;
+        margin-inline: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .btn__bg-orange{
+        width: 90vw;
+        height: 50px;
+        padding: 12px 16px 12px 16px;
+        border-radius: 0px 16px 0px 16px;
+        border: none;
+        background-color: #FF8E0A;
+        color: white;
+
+        font-family: 'Rubik', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 3px;
+    }
+
+    .btn__bg-grey{
+        width: 90vw;
+        height: 50px;
+        padding: 12px 16px 12px 16px;
+        border-radius: 0px 16px 0px 16px;
+        border: none;
+        background-color: #26262E;
+        color: white;
+
+        font-family: 'Rubik', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 3px;
+    }
+}

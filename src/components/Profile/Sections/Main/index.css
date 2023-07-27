@@ -1,0 +1,64 @@
+/* Mobile */
+@media (max-width: 390px) {
+    .main__profile-wrapper{
+        height: 50vh;
+        margin-top: 1rem;
+        margin-inline: 1rem;
+    }
+
+    .main__conteiner{
+        display: flex;
+    }
+
+    .main__title{
+        font-family: 'Rubik', sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 36px;
+        letter-spacing: 0.5px;
+    }
+
+    .main__divider-bar{
+        width: 70px;
+        margin: 0rem 1rem;
+        border: none;
+        border-top: 4px solid #E4E6E8;
+        position: relative;
+        bottom: -20px;
+    }
+
+    .main__playlist-btn{
+        width: 9rem;
+        height: 40px;
+        padding: 6px;
+        border-radius: 0px 16px 0px 16px;
+        border: none;
+        background-color: #FF8E0A;
+        color: white;
+
+        font-family: 'Rubik', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 33px;
+        letter-spacing: 1px;
+    }
+    
+    .main__profile-album-conteiner{
+        display: flex;
+        margin-left: 0.5rem;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .main_profile-playlist-img{
+        width: 144px;
+        height: 134px;
+        border-radius: 0px 26.052631378173828px 0px 40px;
+        opacity: 0.5px;
+    }
+
+    .main__profile-btn{
+        background-color: transparent;
+        border: none;
+    }
+}

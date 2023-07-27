@@ -1,0 +1,24 @@
+/* Mobile */
+@media (max-width: 390px) {
+    .footer__conteiner{
+        height: 60vh;
+        margin-top: 1.5rem;
+        margin-inline: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer__text{
+        font-family: 'Rubik', sans-serif;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: 1.5px;
+        color: rgb(51, 51, 51);
+        border: none;
+        background-color: white;
+    }
+}
