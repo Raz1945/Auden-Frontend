@@ -1,48 +1,67 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
+import { NavLink } from 'react-router-dom';
 import './estilo.css';
 
 function Cuenta() {
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [termsAccepted, setTermsAccepted] = useState(false);
-  const [passwordError, setPasswordError] = useState('');
+  const [isFormComplete, setIsFormComplete] = useState(false);
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
+  const [isNameAvailable, setIsNameAvailable] = useState(true);
   const { setToken } = useAuth();
   const apiUrl = import.meta.env.VITE_API_BACKEND_URL;
 
-  const validatePassword = () => {
-    if (password.length < 8) {
-      setPasswordError('La contraseña debe tener al menos 8 caracteres');
-      return false;
-    } else {
-      setPasswordError('');
-      return true;
-    }
+  const checkFormCompleteness = () => {
+    setIsFormComplete(name.trim() !== '' && password.trim() !== '' && isPasswordValid && isNameAvailable);
   };
 
-  const handleLogin = async () => {
-    if (!termsAccepted) {
-      console.error('Debes aceptar los términos y condiciones antes de continuar.');
-      return;
-    }
+  const handleRegister = async () => {
+    const registerData = {
+      name: name,
+      password: password
+    };
 
-    const isPasswordValid = validatePassword();
-    if (!isPasswordValid) {
-      console.error('La contraseña no es válida. Por favor, corrige el error antes de continuar.');
-      return;
-    }
+    try {
+      const response = await axios.post(`${apiUrl}/register`, registerData);
 
-    // Resto del código para el inicio de sesión...
+      if (response.status === 200 && response.data.accessToken) {
+        console.log('Registro exitoso para el usuario:', response.data.user.name);
+        console.log("token:", response.data.accessToken);
+
+        setToken(response.data.accessToken);
+        window.location.href = '/dashboard';
+      } else {
+        console.error('Error en el registro:', response.data.message);
+      }
+    } catch (error) {
+      console.error('Error en el registro:', error);
+    }
   };
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
 
-  const handleTermsAcceptance = () => {
-    setTermsAccepted(true);
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    setIsPasswordValid(newPassword.length >= 8);
+  };
+
+  const handleNameChange = async (e) => {
+    const newName = e.target.value;
+    setName(newName);
+    
+    try {
+      const response = await axios.post(`${apiUrl}/checkUsernameAvailability`, { name: newName });
+
+      setIsNameAvailable(response.data.available);
+    } catch (error) {
+      console.error('Error al verificar disponibilidad del nombre:', error);
+    }
   };
 
   return (
@@ -50,43 +69,44 @@ function Cuenta() {
       <div className='Main_box'>
         <div className='header'>
           <button className='btn_offborder btn_pages'>←</button>
-          <p>Crear cuenta</p>
+          <p>Registro de cuenta</p>
         </div>
         <div className='box_login'>
-          <p>Nombre de usuario</p>
-          <input type="text" onChange={(e) => setEmail(e.target.value)} />
+          <p>Nombre:</p>
+          <input
+            type="text"
+            onChange={handleNameChange}
+            onBlur={checkFormCompleteness}
+            style={{ borderColor: isNameAvailable ? (isFormComplete ? '#ccc' : '#ccc') : 'red' }}
+          />
+          {!isNameAvailable && (
+            <p style={{ color: 'red', fontSize: '12px' }}>
+              El nombre de usuario ya está registrado.
+            </p>
+          )}
           <p>Contraseña:</p>
-          <div className={`password_input ${passwordError ? 'error' : ''}`}>
+          <div className="password-input">
             <input
+              id='input_password'
               type={showPassword ? "text" : "password"}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handlePasswordChange}
+              onBlur={checkFormCompleteness}
+              style={{ borderColor: isPasswordValid ? (isFormComplete ? '#ccc' : '#ccc') : 'red' }}
             />
+            <button type="button" onClick={togglePasswordVisibility}>
+              {showPassword ? "Ocultar" : "Mostrar"}
+            </button>
           </div>
-          {passwordError && <p className="error_text">{passwordError}</p>}
-            <button
-                className="password_toggle_btn"
-                type="button"
-                onClick={togglePasswordVisibility}
-            >
-                {showPassword ? "O" : "M"}
-            </button>
-            <div className='box_btn_terminos'>
-                <button
-                className={`btn_terminos ${termsAccepted ? 'accepted' : ''}`}
-                onClick={handleTermsAcceptance}
-                ></button>
-                <p>He leído y acepto los</p>
-                <p className='orangeText'>Términos</p>
-                <p>y</p>
-                <p className='orangeText'>condiciones</p>
-            </div>
-          
-            <button
-                onClick={handleLogin}
-                className={`btn_login ${termsAccepted ? 'enabled' : ''}`}
-                disabled={!termsAccepted}
-                >Continuar
-            </button>
+          {!isPasswordValid && (
+            <p style={{ color: 'red', fontSize: '12px' }}>
+              La contraseña debe tener al menos 8 caracteres.
+            </p>
+          )}
+          <NavLink to='/Recuperarcontraseña' className='btn_continue'>{/* hay que cambiar la ruta */}
+            <button onClick={handleRegister} className={`btn_ ${isFormComplete ? 'btn_complete' : ''}`}>
+            Continuar
+            </button>   
+          </NavLink>
         </div>
       </div>
     </>
