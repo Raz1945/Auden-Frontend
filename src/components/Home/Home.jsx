@@ -1,19 +1,16 @@
-import { Link } from "react-router-dom";
+import HomeHeader from "./Home.header/Home.header";
+import HomeCardsContainers from "./Home.cards.containers/Home.cards.containers";
+import HomeCardCupidoMusical from "./Home.card.cupidoMusical/Home.card.cupidoMusical";
+import HomeCardMusicaContextual from "./Home.card.musicaContextual/Home.card.musicaContextual";
 
 const Home = () => {
   return (
     <>
-      <h1>Musica Ya</h1>
-      <div>
-        <ul>
-          <li>
-            <Link to={`/cupidoMusical`}>Cupido</Link>
-          </li>
-          <li>
-            <Link to={`/musicaContextual`}>Musica Contextual</Link>
-          </li>
-        </ul>
-      </div>
+      <HomeHeader />
+      <HomeCardsContainers>
+        <HomeCardCupidoMusical />
+        <HomeCardMusicaContextual />
+      </HomeCardsContainers>
     </>
   );
 }
