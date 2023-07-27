@@ -102,7 +102,7 @@ function Cuenta() {
               La contraseña debe tener al menos 8 caracteres.
             </p>
           )}
-          <NavLink to='/Recuperarcontraseña' className='btn_continue'>{/* hay que cambiar la ruta */}
+          <NavLink to='/dashboard/home' className='btn_continue'>
             <button onClick={handleRegister} className={`btn_ ${isFormComplete ? 'btn_complete' : ''}`}>
             Continuar
             </button>   
