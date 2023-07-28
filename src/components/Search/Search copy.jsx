@@ -10,7 +10,6 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
   const debounceDelay = 200;
 
-
   useEffect(() => {
     const fetchSongs = async () => {
       try {
