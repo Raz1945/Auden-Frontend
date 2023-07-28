@@ -1,12 +1,20 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
+import { NavLink } from 'react-router-dom';
+import './estilo.css';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [isFormComplete, setIsFormComplete] = useState(false);
   const { setToken } = useAuth();
   const apiUrl = import.meta.env.VITE_API_BACKEND_URL;
+
+  const checkFormCompleteness = () => {
+    setIsFormComplete(email.trim() !== '' && password.trim() !== '');
+  };
 
   const handleLogin = async () => {
     const loginData = {
@@ -18,15 +26,11 @@ function Login() {
       const response = await axios.post(`${apiUrl}/login`, loginData);
 
       if (response.status === 200 && response.data.accessToken) {
-        console.log("respuesta", response.data.accessToken)
-
         console.log('Inicio de sesión exitoso para el usuario:', response.data.user.email);
-        // Se guarda el token de acceso en el estado global de la aplicación
-        setToken(response.data.accessToken);
-        localStorage.setItem('jwtToken', response.data.accessToken); //* Solucion
+        console.log("token:", response.data.accessToken);
 
-        // Redirige al usuario a la Home ('dashboard/home') si el inicio de sesión fue exitoso. 
-        window.location.href = '/dashboard/home'; // ? Cambiar por redirect
+        setToken(response.data.accessToken);
+        window.location.href = '/dashboard';
       } else {
         console.error('Error en el inicio de sesión:', response.data.message);
       }
@@ -34,18 +38,38 @@ function Login() {
       console.error('Error en el inicio de sesión:', error);
     }
   };
-  
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
 
   return (
     <>
-      <h1>Hola estas en el Login</h1>
-      <div>
-        <input type="email" placeholder="Correo electrónico" onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" placeholder="Contraseña" onChange={(e) => setPassword(e.target.value)} />
-        <button onClick={handleLogin}>Iniciar sesión</button>
+      <div className='Main_box'>
+        <div className='header'>
+          <button className='btn_offborder btn_pages'>←</button>
+          <p>Iniciar sesión</p>
+        </div>
+        <div className='box_login'>
+          <p>Nombre de usuario o E-mail:</p>
+          <input type="email" onChange={(e) => setEmail(e.target.value)} onBlur={checkFormCompleteness} />
+          <p>Contraseña:</p>
+          <div className="password-input">
+            <input id='input_password' type={showPassword ? "text" : "password"} onChange={(e) => setPassword(e.target.value)} onBlur={checkFormCompleteness} />
+            <button type="button" onClick={togglePasswordVisibility}>
+              {showPassword ? "Ocultar" : "Mostrar"}
+            </button>
+          </div>
+          <button onClick={handleLogin} className={`btn_ ${isFormComplete ? 'btn_complete' : ''}`}>
+            Iniciar sesión
+          </button>
+          <NavLink to='/Recuperarcontraseña' className='btn_offborder'>
+            ¿Olvidaste tu contraseña?
+          </NavLink>
+        </div>
       </div>
     </>
-  )
+  );
 }
 
 export default Login;

@@ -1,0 +1,70 @@
+p{
+    margin: 0;
+}
+.box_btn_terminos{
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+}
+.orangeText{
+    color:#FF8E0A;
+}
+.btn_terminos{
+    margin-top: 0;
+}
+.btn_login {
+    background-color: rgb(165, 165, 165);
+    color: #fff;
+    cursor: not-allowed;
+}
+.btn_login.enabled {
+
+    background-color: #FF8E0A;
+    color: white;
+    
+}
+
+
+input{
+    border-radius: 0px 40px;
+    width: 80vw;
+    height: 40px;
+    border-radius: 0px 16px 0px 16px;
+
+}
+
+.password_input {
+    display: flex;
+    align-items: center;
+    border: 0px solid #ccc;
+    padding: 4px;
+    position: relative;
+} 
+/* Estilos para el input de contraseña */
+.password-input input {
+    flex: 1;
+    border: none;
+    outline: none;
+}
+  
+  /* Estilos para el botón de mostrar/ocultar contraseña */
+.password_toggle_btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+  
+  /* Estilos adicionales para el input cuando hay un error */
+.password_input.error {
+    border-color: red;
+}
+  
+  /* Estilos para el mensaje de error de contraseña */
+.error_text {
+    color: red;
+    font-size: 12px;
+}

@@ -1,20 +1,26 @@
 // import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import Dashboard from '../components/Dashboard/Dashboard';
+import Root from '../components/Dashboard/Dashboard';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import Search from '../components/Search/Search';
 import Home from '../components/Home/Home';
 import CupidoMusical from '../components/CupidoMusical/CupidoMusical';
 import MusicaContextual from '../components/MusicaContextual/MusicaContextual';
-
-
+import Inicio from '../components/inicio/inicio';
+import Cuenta from '../components/register2parte/crearcuenta';
+import RContrasena from '../components/olvidarContraseña/olvidarcontraseña';
 
 const AppRoutes = createBrowserRouter([
     {
-    //  Inicio
+    //  *
     path: '/',
     element: <h1>Auden</h1>
+  },
+  {
+    //  Inicio
+    path: '/inicio',
+    element: <Inicio />
   },
   {
     //  Login
@@ -22,14 +28,26 @@ const AppRoutes = createBrowserRouter([
     element: <Login />
   },
   {
+    //  olvidar contraseña
+    path: '/Recuperarcontraseña',
+    element: <RContrasena />
+  },
+  {
     //  Registro
     path: '/register',
     element: <Register />
   },
   {
+    //  Registro parte 2
+    path: '/crearCuenta',
+    element: <Cuenta />
+  },
+
+  {
+    // ? Como hacer para mostrar esta pagina solo si esta logueado?
     // Inicio
     path: '/dashboard',
-    element: <Dashboard />,
+    element: <Root />,
     children: [
       {
         // Pagina de inicio
@@ -62,3 +80,4 @@ const AppRoutes = createBrowserRouter([
 ]);
 
 export default AppRoutes;
+
