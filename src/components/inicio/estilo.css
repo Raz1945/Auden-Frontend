@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+}
+.container {
+    background-image: url('../inicio/Gif_Auden.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 418px;
+}
+.sub_container{
+    margin-top: 0px;
+}
+.btn_order{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    border-radius: 0px 40px;
+    width: 80vw;
+    height: 40px;
+    border-radius: 0px 16px 0px 16px;
+}
+.btn_orange{
+    background-color:  #FF8E0A;
+    color: white;
+}
+.btn_wborders{
+    background-color: rgba(255, 255, 255, 0); 
+    border: 2px solid black;
+}
+.btn_offborder{
+    border: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);/* transparente */
+    font-size: 16px;
+    height: 30px;
+    padding: 12px 16px 12px 16px
+}
+button{
+    margin-top: 30px;
+}
