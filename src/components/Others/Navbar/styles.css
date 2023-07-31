@@ -30,7 +30,12 @@
   position: relative;
   bottom: 10px;
 }
-
+.navbar__element.active{
+  opacity: 1;
+}
+.navbar__element.inactive {
+  opacity: 0.4000000059604645;
+}
 .navbar__text {
   color: var(--medios-tonos-gris-5, #26262e);
   text-align: center;
@@ -43,7 +48,4 @@
   margin: 0;
 }
 
-.inactive{
-  opacity: 0.4000000059604645;
-}
 

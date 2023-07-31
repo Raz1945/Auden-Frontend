@@ -2,9 +2,10 @@
   display: flex;
   width: 320px;
   height: 80px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 12px;
+  overflow: hidden;
 
   border-radius: 0px 24px;
   background: var(--blanco, #fdfeff);
@@ -18,7 +19,7 @@
 .card__img {
   width: 87px;
   height: 80px;
-  flex-shrink: 0;
+  object-fit: cover;
   fill: var(--medios-tonos-gris-5, #26262e);
 }
 
