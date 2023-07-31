@@ -6,10 +6,13 @@ import Register from '../components/Register/Register';
 import Search from '../components/Search/Search';
 import Home from '../components/Home/Home';
 import CupidoMusical from '../components/CupidoMusical/CupidoMusical';
+import Profile from '../components/Profile/Profile';
 import MusicaContextual from '../components/MusicaContextual/MusicaContextual';
 import Inicio from '../components/inicio/inicio';
 import Cuenta from '../components/register2parte/crearcuenta';
 import RContrasena from '../components/olvidarContraseña/olvidarcontraseña';
+import Configuration from '../components/Configuracion/Configuration';
+import Playlist from '../components/Playlist/playlist';
 
 const AppRoutes = createBrowserRouter([
     {
@@ -60,7 +63,7 @@ const AppRoutes = createBrowserRouter([
       },
       {// Perfil
         path: 'profile',
-        element: <Profile />
+        element: <Profile/> 
       },
       {// Amigos
         path: 'friends',

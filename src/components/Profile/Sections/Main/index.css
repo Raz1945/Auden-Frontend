@@ -60,5 +60,6 @@
     .main__profile-btn{
         background-color: transparent;
         border: none;
+        margin-top: 1px;
     }
 }

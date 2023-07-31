@@ -1,6 +1,9 @@
 import "./index.css";
 import React from "react";
 import { Song_format} from "./song-format";
+//import InfiniteScrollC from "../../infiniteScrollC"; <InfiniteScrollC/>
+import MusicaContextual from "../../../MusicaContextual/MusicaContextual";
+
 
 
 export const Main = () => {
@@ -36,10 +39,8 @@ export const Main = () => {
           </div>
         </div>
 
-        <Song_format img={"/images/profile-main-album-img-1.jpg"} title={"Song"} artist={"Artist"} />
         <Song_format/>
-        <Song_format/>
-        <Song_format/>
+        
     </>
   );
 };

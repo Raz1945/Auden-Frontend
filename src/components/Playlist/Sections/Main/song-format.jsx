@@ -5,11 +5,7 @@ function Song_format(prop) {
     <>
       <button className="main__playlist-song-wrapper">
         <div className="main__playlist-song">
-          <img
-            className="main__playlist-song-img"
-            src={prop.img}
-            alt=""
-          />
+          <img className="main__playlist-song-img" src={prop.img} alt="" />
           <div className="main__playlist-song-text-conteiner">
             <h2 className="">{prop.title}</h2>
             <p>{prop.artist}</p>
@@ -24,4 +20,4 @@ function Song_format(prop) {
   );
 }
 
-export {Song_format}
+export { Song_format };
