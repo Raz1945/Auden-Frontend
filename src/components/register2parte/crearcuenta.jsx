@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import { NavLink } from 'react-router-dom';
 import './estilo.css';
 
-function Cuenta() {
+function Cuenta({ email }) {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -20,9 +20,11 @@ function Cuenta() {
 
   const handleRegister = async () => {
     const registerData = {
-      name: name,
+      email: email,
+      user: name,
       password: password
     };
+    console.log('Datos de registro enviados al backend:', registerData); // console.log para ver los datos que se enviarán al backend.
 
     try {
       const response = await axios.post(`${apiUrl}/register`, registerData);
@@ -54,16 +56,17 @@ function Cuenta() {
   const handleNameChange = async (e) => {
     const newName = e.target.value;
     setName(newName);
-    
+  
     try {
-      const response = await axios.post(`${apiUrl}/checkUsernameAvailability`, { name: newName });
-
+      const response = await axios.post(`${apiUrl}/flow/checkUsernameAvailability`, { name: newName });/* ruta posible error */
+  
       setIsNameAvailable(response.data.available);
     } catch (error) {
       console.error('Error al verificar disponibilidad del nombre:', error);
+      
     }
   };
-
+  
   return (
     <>
       <div className='Main_box'>

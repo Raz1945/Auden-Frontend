@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 import Cuenta from '../register2parte/crearcuenta';
+
+const apiUrl = import.meta.env.VITE_API_BACKEND_URL;
 
 function EmailInput() {
   const [email, setEmail] = useState('');
@@ -12,10 +15,19 @@ function EmailInput() {
   };
 
   const handleContinuar = () => {
-    setMostrarCuenta(true);
-    console.log('Botón Continuar presionado. Email:', email);
+    // Realiza la solicitud POST con Axios
+    axios.post(`${apiUrl}/register`, { email })
+      .then((response) => {
+        // Si la solicitud es exitosa, muestra el componente Cuenta
+        setMostrarCuenta(true);
+        console.log('Botón Continuar presionado. Email:', email);
+      })
+      .catch((error) => {
+        // Maneja los errores de la solicitud
+        console.error('Error al enviar el correo electrónico:', error);
+      });
   };
-  const isEmailValid = true;
+
   return (
     <div className="Main_box">
       {mostrarCuenta ? (
@@ -35,11 +47,7 @@ function EmailInput() {
             value={email}
             onChange={handleEmailChange}
           />
-          <button
-            className="btn_orange btn btn_crearcuenta"
-            onClick={handleContinuar}
-            disabled={!isEmailValid} // Deshabilitar el botón si el email no es válido
-          >
+          <button className="btn_orange btn btn_crearcuenta" onClick={handleContinuar}>
             Continuar
           </button>
         </>
@@ -49,8 +57,3 @@ function EmailInput() {
 }
 
 export default EmailInput;
-
-/* "email":"gonsan@mail.com",
-  "password":"asd12345" */
-  
-  /* expresiones regulares para validacion */
