@@ -9,6 +9,8 @@ import CupidoMusical from '../components/CupidoMusical/CupidoMusical';
 import MusicaContextual from '../components/MusicaContextual/MusicaContextual';
 import Profile from '../components/Profile/Profile';
 import Configuration from '../components/Configuracion';
+import Playlist from '../components/Playlist/playlist';
+
 
 
 
@@ -44,7 +46,7 @@ const AppRoutes = createBrowserRouter([
       },
       {// Perfil
         path: 'profile',
-        element: <Profile/>
+        element: <Profile />
       },
       {// Amigos
         path: 'friends',
@@ -65,6 +67,10 @@ const AppRoutes = createBrowserRouter([
   {// Configuración
     path: 'configuration',
     element: <Configuration/>
+  },
+  {// Playlist
+    path: 'playlist',
+    element: <Playlist />
   },
 ]);
 

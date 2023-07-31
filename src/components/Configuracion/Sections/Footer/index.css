@@ -1,9 +1,7 @@
 /* Mobile */
 @media (max-width: 390px) {
     .footer__conteiner{
-        height: 60vh;
-        margin-top: 1.5rem;
-        margin-inline: 1rem;
+        margin-top: 28rem;
 
         display: flex;
         flex-direction: column;

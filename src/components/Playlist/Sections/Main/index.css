@@ -1,0 +1,74 @@
+/* Mobile */
+@media (max-width: 390px) {
+
+    .main_playlist-album-img{
+        width: 225px;
+        height: 225px;
+        border-radius: 0px 26.052631378173828px 0px 40px;
+    }
+    
+    .main__playlist-icons-wrapper{
+        display: flex;
+        width: 85vw;
+        margin-top: 1rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main__playlist-icons-conteiner{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .main__playlist-logo-btn{
+        width: 2.5rem;
+        padding: 6px;
+        border-radius: 0px 12px 0px 12px;
+        border: none;
+        background-color: #FFFFFF;
+    }
+
+    .main__playlist-verified{
+        width: 20px;
+    }
+
+    .main__playlist-copy{
+        width: 30px;
+    }
+
+    .main__playlist-text{
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+    }
+
+    .main__playlist-song-wrapper{
+        display: flex;
+        background-color: transparent;
+        border: none;
+        width: 85vw;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+
+    .main__playlist-song{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .main__playlist-song-text-conteiner{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .main__playlist-song-img{
+        width: 50px;
+    }
+}

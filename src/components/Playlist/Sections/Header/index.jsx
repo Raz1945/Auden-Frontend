@@ -11,7 +11,13 @@ export const Header = () => {
           <img className="header__arrow" src="\images\configuracion-header-arrow.svg" alt="" /> 
         </button>
       </NavLink>
-        <h1 className="header__title">Configuración</h1>
+        <div className="header__title-conteiner" >
+          <p className="header__title-text" >Generada del Cupido Musical</p>
+          <h1 className="header__playlist-title">Playlist Generada</h1>
+        </div>
+        <button className="header__configuration-btn">
+          <img className="header__ham" src="\images\playlist-header-ham.svg" alt="" /> 
+        </button>
       </header>
     </>
   );

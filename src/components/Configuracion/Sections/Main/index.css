@@ -1,9 +1,7 @@
 /* Mobile */
 @media (max-width: 390px) {
     .main__wrapper{
-        height: 65vh;
-        margin-top: 1rem;
-        margin-inline: 1rem;
+        margin-top: 2rem;
 
         display: flex;
         flex-direction: column;

@@ -1,20 +1,21 @@
 import AppContainer from "../Others/AppContainer/AppContainer";
-import Footer from "./Sections/Footer";
+import Navbar from "../Others/Navbar/Navbar";
 import Header from "./Sections/Header";
 import { Main } from "./Sections/Main";
 import "./index.css";
 
-function Configuration () {
+function Playlist () {
+
 
 return (
     <>
       <AppContainer>
         <Header/>
         <Main/>
-        <Footer/>
+        <Navbar/>
       </AppContainer>
     </>
   );
-} 
+}
 
-export default Configuration;
+export default Playlist;

@@ -13,6 +13,7 @@
     .header__profile-conteiner{
         display: flex;
         align-items: flex-start;
+        margin: 2rem;
     }
 
     .header__profile-img{

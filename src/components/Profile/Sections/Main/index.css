@@ -2,7 +2,7 @@
 @media (max-width: 390px) {
     .main__profile-wrapper{
         height: 50vh;
-        margin-top: 1rem;
+        margin-top: 6rem;
         margin-inline: 1rem;
     }
 
@@ -20,7 +20,7 @@
 
     .main__divider-bar{
         width: 70px;
-        margin: 0rem 1rem;
+        margin: 0rem 0.5rem;
         border: none;
         border-top: 4px solid #E4E6E8;
         position: relative;
@@ -28,8 +28,8 @@
     }
 
     .main__playlist-btn{
-        width: 9rem;
-        height: 40px;
+        width: 8.5rem;
+        height: 30px;
         padding: 6px;
         border-radius: 0px 16px 0px 16px;
         border: none;
@@ -37,9 +37,9 @@
         color: white;
 
         font-family: 'Rubik', sans-serif;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 500;
-        line-height: 33px;
+        line-height: 20px;
         letter-spacing: 1px;
     }
     
