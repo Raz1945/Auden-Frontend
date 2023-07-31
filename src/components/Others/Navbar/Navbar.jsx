@@ -9,7 +9,6 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Aquí actualizamos el estado `activeIcon` cuando la ruta cambie
     switch (location.pathname) {
       case "/dashboard/home":
         setActiveIcon(smIcons.home.active);
@@ -24,34 +23,38 @@ const Navbar = () => {
         setActiveIcon(smIcons.friends.active);
         break;
       default:
-        setActiveIcon(null); // Si la ruta no coincide, desactivamos todos los iconos
+        setActiveIcon(null);
     }
   }, [location]);
 
   return (
     <nav className='navbar-container'>
       <NavbarElement
-        route={"home"}
-        text={"Inicio"}
-        icon={activeIcon === smIcons.home.active ? smIcons.home.active : smIcons.home.inactive}
+        route="home"
+        text="Inicio"
+        icon={smIcons.home}
+        isActive={activeIcon === smIcons.home.active}
         onClick={() => setActiveIcon(smIcons.home.active)}
       />
       <NavbarElement
-        route={"search"}
-        text={"Buscar"}
-        icon={activeIcon === smIcons.search.active ? smIcons.search.active : smIcons.search.inactive}
+        route="search"
+        text="Buscar"
+        icon={smIcons.search}
+        isActive={activeIcon === smIcons.search.active}
         onClick={() => setActiveIcon(smIcons.search.active)}
       />
       <NavbarElement
-        route={"profile"}
-        text={"Perfil"}
-        icon={activeIcon === smIcons.user.active ? smIcons.user.active : smIcons.user.inactive}
+        route="profile"
+        text="Perfil"
+        icon={smIcons.user}
+        isActive={activeIcon === smIcons.user.active}
         onClick={() => setActiveIcon(smIcons.user.active)}
       />
       <NavbarElement
-        route={"friends"}
-        text={"Amigos"}
-        icon={activeIcon === smIcons.friends.active ? smIcons.friends.active : smIcons.friends.inactive}
+        route="friends"
+        text="Amigos"
+        icon={smIcons.friends}
+        isActive={activeIcon === smIcons.friends.active}
         onClick={() => setActiveIcon(smIcons.friends.active)}
       />
     </nav>
