@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import { NavLink } from 'react-router-dom';
 import './estilo.css';
 
-function Cuenta() {
+function Cuenta({ email }) {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -20,9 +20,11 @@ function Cuenta() {
 
   const handleRegister = async () => {
     const registerData = {
-      name: name,
+      email: email,
+      user: name,
       password: password
     };
+    console.log('Datos de registro enviados al backend:', registerData); // console.log para ver los datos que se enviarán al backend.
 
     try {
       const response = await axios.post(`${apiUrl}/register`, registerData);
@@ -40,6 +42,20 @@ function Cuenta() {
       console.error('Error en el registro:', error);
     }
   };
+  const handleNameChange = async (e) => {
+    const newName = e.target.value;
+    setName(newName);
+  
+    try {
+      const response = await axios.post(`${apiUrl}/checkUsernameAvailability`, { name: newName });/* ruta posible error */
+  
+      setIsNameAvailable(response.data.available);
+    } catch (error) {
+      console.error('Error al verificar disponibilidad del nombre:', error);
+      
+    }
+  };
+
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
@@ -49,19 +65,6 @@ function Cuenta() {
     const newPassword = e.target.value;
     setPassword(newPassword);
     setIsPasswordValid(newPassword.length >= 8);
-  };
-
-  const handleNameChange = async (e) => {
-    const newName = e.target.value;
-    setName(newName);
-    
-    try {
-      const response = await axios.post(`${apiUrl}/checkUsernameAvailability`, { name: newName });
-
-      setIsNameAvailable(response.data.available);
-    } catch (error) {
-      console.error('Error al verificar disponibilidad del nombre:', error);
-    }
   };
 
   return (
@@ -75,8 +78,8 @@ function Cuenta() {
           <p>Nombre:</p>
           <input
             type="text"
-            onChange={handleNameChange}
             onBlur={checkFormCompleteness}
+            onChange={handleNameChange}
             style={{ borderColor: isNameAvailable ? (isFormComplete ? '#ccc' : '#ccc') : 'red' }}
           />
           {!isNameAvailable && (

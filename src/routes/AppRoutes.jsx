@@ -32,7 +32,7 @@ const AppRoutes = createBrowserRouter([
   },
   {
     //  olvidar contraseña
-    path: '/Recuperarcontraseña',
+    path: '/Recuperarcontrasena',
     element: <RContrasena />
   },
   {
