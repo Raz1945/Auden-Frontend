@@ -1,0 +1,63 @@
+/* Mobile */
+@media (max-width: 390px) {
+    .header__conteiner{
+        height: 30vh;
+    }
+
+    .header__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__profile-conteiner{
+        display: flex;
+        align-items: flex-start;
+        margin: 2rem;
+    }
+
+    .header__profile-img{
+        width: 50vw;
+        border-radius: 100px;
+        height: 21vh;
+    }
+
+    .header__gear-icon{
+        width: 30px;
+        position: relative;
+        right: -3rem;
+    }
+
+    .header__gear-btn{
+        background-color: transparent;
+        border: none;
+    }
+
+    .header__name-container{
+        display: flex;
+        gap: 10px;
+        margin-top: 0.5rem;
+        align-items: center;
+    }
+    .header__name {
+        font-family: 'Rubik', sans-serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 36px;
+        letter-spacing: 0.5px;
+        text-align: left;
+    }
+
+    .header__profile-emoji{
+        width: 40px;
+    }
+
+    .header__username{
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 36px;
+        letter-spacing: 0.5px;
+        text-align: left;
+    }
+}

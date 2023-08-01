@@ -1,0 +1,43 @@
+/* Mobile */
+@media (max-width: 390px) {
+    .header__configuration-wrapper{
+        display: flex;
+        margin: 2rem;
+        gap: 2rem;
+    }
+
+    .header__title-conteiner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__title-text{
+        font-family: 'Rubik', sans-serif;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+    }
+
+    .header__configuration-btn{
+        background-color: transparent;
+        border: none;
+    }
+
+    .header__arrow{
+        width: 20px;
+        height: 20px;
+    }
+
+    .header__ham{
+        width: 30px;
+    }
+
+    .header__playlist-title{
+        font-family: 'Rubik', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+}
