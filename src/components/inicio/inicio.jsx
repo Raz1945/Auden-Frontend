@@ -4,23 +4,10 @@ import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 
 const Inicio = () => {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showRegistro, setShowRegistro] = useState(false);
-
-  const handleShowLogin = () => {
-    setShowLogin(true);
-    setShowRegistro(false);
-  };
-
-  const handleShowRegistro = () => {
-    setShowRegistro(true);
-    setShowLogin(false);
-  };
-
+  
   return (
     <div className='container'>
       <div className='sub_container'>
-        {!showLogin && !showRegistro ? (
           <>
             <div>
               <Logo />
@@ -39,7 +26,6 @@ const Inicio = () => {
               Iniciar Sesión
             </NavLink>
           </>
-        ) : null}
       </div>
     </div>
   );

@@ -43,6 +43,7 @@ function Cuenta({ email }) {
     }
   };
 
+
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
@@ -53,20 +54,6 @@ function Cuenta({ email }) {
     setIsPasswordValid(newPassword.length >= 8);
   };
 
-  const handleNameChange = async (e) => {
-    const newName = e.target.value;
-    setName(newName);
-  
-    try {
-      const response = await axios.post(`${apiUrl}/flow/checkUsernameAvailability`, { name: newName });/* ruta posible error */
-  
-      setIsNameAvailable(response.data.available);
-    } catch (error) {
-      console.error('Error al verificar disponibilidad del nombre:', error);
-      
-    }
-  };
-  
   return (
     <>
       <div className='Main_box'>
@@ -78,7 +65,6 @@ function Cuenta({ email }) {
           <p>Nombre:</p>
           <input
             type="text"
-            onChange={handleNameChange}
             onBlur={checkFormCompleteness}
             style={{ borderColor: isNameAvailable ? (isFormComplete ? '#ccc' : '#ccc') : 'red' }}
           />
