@@ -1,6 +1,6 @@
-p{
+/* p{
     margin: 0;
-}
+} */
 .box_btn_terminos{
     display: flex;
     flex-direction: row;
@@ -25,13 +25,13 @@ p{
 }
 
 
-input{
+/* input{
     border-radius: 0px 40px;
     width: 80vw;
     height: 40px;
     border-radius: 0px 16px 0px 16px;
 
-}
+} */
 
 .password_input {
     display: flex;

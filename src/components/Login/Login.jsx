@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 import { NavLink } from 'react-router-dom';
-import './estilo.css';
+// import './estilo.css'; Genera conflictos con los css
 
 function Login() {
   const [email, setEmail] = useState('');

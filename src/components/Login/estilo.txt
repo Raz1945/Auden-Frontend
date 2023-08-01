@@ -71,7 +71,6 @@ input{
     cursor: pointer;
 }
   
-  /* Estilo para el botón cuando el formulario está completo */
 .btn_complete {
-    background-color: #FF8E0A; /* Cambia el color del botón cuando el formulario está completo */
+    background-color: #FF8E0A; 
 }
