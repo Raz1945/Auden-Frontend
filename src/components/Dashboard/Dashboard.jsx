@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   //* Solucion 
   const jwtToken = localStorage.getItem('jwtToken');
-  (jwtToken == null) ? (window.location.href = '/login') : console.log("verificó el token")
+  /* (jwtToken == null) ? (window.location.href = '/login') : console.log("verificó el token") */
 
   return (
     <>
