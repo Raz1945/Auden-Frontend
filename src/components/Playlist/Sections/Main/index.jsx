@@ -2,7 +2,39 @@ import "./index.css";
 import React from "react";
 import { Song_format} from "./song-format";
 //import InfiniteScrollC from "../../infiniteScrollC"; <InfiniteScrollC/>
-import MusicaContextual from "../../../MusicaContextual/MusicaContextual";
+
+/* import { useState, useEffect } from "react";
+const [currentPlaylist, setCurrentPlaylist] = useState([]);
+const [songs, setSongs] = useState([]);
+const [qualities, setQualities] = useState([]);
+
+const getPlaylist = async () => {
+  try{
+  setIsLoading(true)
+  const response = await fetch(
+    `http://localhost:3005/ping2`
+  );
+  const data = await response.json()
+  setSongs(data.results);
+    
+  const qualitiesResponseData = await Promise.all(
+    data.results.map(async () => {
+        const response = await fetch(`${}`);
+        return await response.json();
+    })
+);
+setQualities(qualitiesResponseData);
+} catch (error){
+  return <Error to="/error"/>
+} finally {
+  setIsLoading(false)
+} 
+
+};
+
+useEffect(() => {
+  getPlaylist();
+}, [currentPlaylist]); */
 
 
 

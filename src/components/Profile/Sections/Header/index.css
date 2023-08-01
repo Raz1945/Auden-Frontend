@@ -1,5 +1,4 @@
-/* Mobile */
-@media (max-width: 390px) {
+
     .header__conteiner{
         height: 30vh;
     }
@@ -60,4 +59,3 @@
         letter-spacing: 0.5px;
         text-align: left;
     }
-}

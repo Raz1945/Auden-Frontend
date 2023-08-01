@@ -1,5 +1,4 @@
-/* Mobile */
-@media (max-width: 390px) {
+
     .header__configuration-wrapper{
         display: flex;
         margin: 2rem;
@@ -40,4 +39,3 @@
         font-weight: 500;
         line-height: 20px;
     }
-}

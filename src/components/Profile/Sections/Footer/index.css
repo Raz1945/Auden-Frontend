@@ -1,5 +1,4 @@
-/* Mobile */
-@media (max-width: 390px) {
+
     .footer__conteiner{
         height: 0vh;
     }
@@ -21,4 +20,3 @@
         width: 40px;
         height: 40px;
     }
-}

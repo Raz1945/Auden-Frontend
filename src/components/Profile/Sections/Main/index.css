@@ -1,5 +1,4 @@
-/* Mobile */
-@media (max-width: 390px) {
+
     .main__profile-wrapper{
         height: 50vh;
         margin-top: 6rem;
@@ -62,4 +61,3 @@
         border: none;
         margin-top: 1px;
     }
-}

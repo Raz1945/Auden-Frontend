@@ -1,5 +1,4 @@
-/* Mobile */
-@media (max-width: 390px) {
+
     .main__wrapper{
         margin-top: 2rem;
 
@@ -39,4 +38,3 @@
         line-height: 15px;
         letter-spacing: 3px;
     }
-}

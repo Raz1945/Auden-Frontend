@@ -1,5 +1,4 @@
-/* Mobile */
-@media (max-width: 390px) {
+
 
     .main_playlist-album-img{
         width: 225px;
@@ -71,4 +70,3 @@
     .main__playlist-song-img{
         width: 50px;
     }
-}
