@@ -110,7 +110,7 @@ function Cuenta({ email }) {
               style={{ borderColor: isPasswordValid ? (isFormComplete ? '#ccc' : '#ccc') : 'red' }}
             />
             <button type="button" className='btn_mostar_password_2_box' onClick={togglePasswordVisibility}>
-              {showPassword ? "Ocultar" : "Mostrar"}
+              {showPassword ?  <img src="/icons/small/others/ocultarcontrasena.svg" alt="" /> : <img src="/icons/small/others/mostrarcontrasena.svg" alt="" />}
             </button>
           </div>
           {!isPasswordValid && (
@@ -121,11 +121,15 @@ function Cuenta({ email }) {
           <div className='box_checkbox'>
             <label>
               <input type="checkbox" className='checkbox' checked={isChecked} onChange={handleCheckboxChange} />
+              <img src="/icons/small/others/chekbox_sincheck.svg" alt="" />
             </label>
-            <p>He leído y acepto los</p>
-            <p className='title_orange'>Términos</p>
-            <p>y</p>
-            <p className='title_orange'>Condiciones.</p>
+            <div className='text_terminosYcondiciones'>
+              <p>He leído y acepto los</p>
+              <p className='title_orange'>Términos</p>
+              <p>y</p>
+              <p className='title_orange'>Condiciones.</p>
+            </div>
+            
           </div>
           <NavLink to='/dashboard/home' className='btn_continue'>
             <button onClick={handleRegister} className={`btn_ ${isFormComplete ? 'btn_complete' : ''}`}>

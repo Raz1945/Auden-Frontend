@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-//import PlaylistGenerada from './playlist';
+import { NavLink } from 'react-router-dom';
+import './estilo.css';
 
 const MusicaContextual = () => {
   const [selectedOption, setSelectedOption] = useState('');
@@ -57,7 +58,6 @@ const MusicaContextual = () => {
   };
 
   const handleEnviarDatos = () => {
-    // Enviar los datos seleccionados a la API
     const data = {
       selectedOption,
       selectedGenres,
@@ -67,19 +67,39 @@ const MusicaContextual = () => {
 
   return (
     <div>
-      <h3>Musica Contextual</h3>
-      <label htmlFor="selectOptions">Selecciona una opción:</label>
-      <select id="selectOptions" value={selectedOption} onChange={handleSelectChange}>
-        <option value="">Seleccionar</option>
-        {options.map((option, index) => (
-          <option key={index} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-
-      <h3>Selecciona hasta 2 géneros:</h3>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div>
+          <NavLink to='/inicio' className='arrow_position_7'>
+            ←
+          </NavLink>
+          <p className='musicacontextual_text'>Musica Contextual</p>
+      </div>
+      <div className='selects_1'>
+        <label htmlFor="selectOptions" className='labels_select_text'>¿Cuál es la ocasión?</label>
+        <select id="selectOptions" className='select_barra' value={selectedOption} onChange={handleSelectChange}>
+          <option value="">Actividad</option>
+          {options.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className='selects_1'>
+        <label htmlFor="" className='labels_select_text'>¿Cómo te sientes?</label>
+        <select name="" id="" className='select_barra'>
+          <option value="">Estado de Ánimo</option>
+        </select>
+      </div>
+      <div className='selects_1'>
+        <label htmlFor="" className='labels_select_text'>¿Cómo esta el clima?</label>
+        <select name="" id="" className='select_barra'>
+          <option value="">clima</option>
+        </select>
+      </div>
+      
+      <div className='box_selec_btn'>
+        <h3 className='generos_title'>Selecciona hasta 2 géneros:</h3>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
         {[...Array(4)].map((_, rowIndex) => (
           <div key={rowIndex} style={{ display: 'flex', marginBottom: '10px' }}>
             {[...Array(5)].map((_, buttonIndex) => {
@@ -87,7 +107,7 @@ const MusicaContextual = () => {
               const buttonLabel = buttonLabels[genreIndex];
 
               const isSelected = selectedGenres.includes(buttonLabel); 
-              const buttonClass = isSelected ? 'selected-button' : ''; 
+              const buttonClass = isSelected ? 'selected_button' : 'noSelected'; 
 
               return (
                 <button
@@ -103,8 +123,8 @@ const MusicaContextual = () => {
           </div>
         ))}
       </div>
-
-      <button onClick={handleEnviarDatos}>Crear Playlist</button>
+      </div>
+      <button className='crearplaylist' onClick={handleEnviarDatos}>Crear Playlist</button>
     </div>
   );
 };

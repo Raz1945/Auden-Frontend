@@ -18,3 +18,11 @@ try {
       console.error('Error en el inicio de sesión:', error);
     }
   };
+
+
+
+  <NavLink to='/dashboard/home' className='btn_offborder'>
+    <button onClick={handleLogin} className={`btn_ margenes_Abajo ${isFormComplete ? 'btn_complete' : ''}`}>
+      Iniciar sesión
+    </button>
+  </NavLink>

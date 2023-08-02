@@ -86,6 +86,8 @@ body{
 #btn_mostar_password{
     position: absolute;
     top: 14px;
-    right: 5px;
+    right: 13px;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
 
 }

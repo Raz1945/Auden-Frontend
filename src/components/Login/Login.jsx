@@ -64,7 +64,7 @@ function Login() {
           <div className="password_input">
             <input id='input_password' type={showPassword ? "text" : "password"} onChange={(e) => setPassword(e.target.value)} onBlur={checkFormCompleteness} className="inputs_tamaño margenes_Abajo"/>
             <button type="button" id='btn_mostar_password' onClick={togglePasswordVisibility}>
-              {showPassword ? "Ocultar" : "Mostrar"}
+              {showPassword ? <img src="/icons/small/others/ocultarcontrasena.svg" alt="" /> : <img src="/icons/small/others/mostrarcontrasena.svg" alt="" />}
             </button>
           </div>
           <div className='box_btn_login_forgotpassword'>
