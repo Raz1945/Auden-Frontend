@@ -3,14 +3,6 @@ body{
     padding: 0;
    
 }
-/* p{
-    margin: 0;
-    padding: 0;
-} */
-/* button{
-    border-radius: 0px 16px 0px 16px;
-
-} */
 .btn_pages{
     margin-top: 0;  
 }
@@ -43,35 +35,57 @@ body{
     height: 100vh;
 }
 .box_login{
-    margin-left: 40px;
+    margin-left: 20px;
     margin-top: 50px;
 }
 
-/* label{
-    display: flex;
-    flex-direction: column;
-    font-size: 26px;
-    
-}
-input{
-    border-radius: 0px 40px;
-    width: 80vw;
-    height: 30px;
-    border-radius: 0px 16px 0px 16px;
-    margin-bottom: 40px;
-} */
 #input_password{
-    border: black 2px solid;
+    border-color: #E4E6E8;
 }
 .btn_  {
-    background-color: rgb(146, 146, 146); /* Color predeterminado del botón */
-    color: white;
-    padding: 10px 20px;
+    background-color: #E4E6E8; /* Color predeterminado del botón */
+    color: #FDFEFF;
+    padding: 12px, 16px, 12px, 16px;
     border: none;
     cursor: pointer;
+    border-radius: 0px 16px 0px 16px;
+    width:  320px;
+    height: 38px ;
+}
+.inputs_tamaño{
+    border-radius: 0px 16px 0px 16px;
+    width: 320px;
+    height: 38px ;
+
 }
   
   /* Estilo para el botón cuando el formulario está completo */
 .btn_complete {
     background-color: #FF8E0A; /* Cambia el color del botón cuando el formulario está completo */
+}
+.box_btn_login_forgotpassword{
+    display: flex;
+    flex-direction: column;
+}
+.margenes_Abajo{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    border-color: #E4E6E8;   
+}
+.arrow_position{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+}
+.title_login{
+    margin-top: 20px;
+}
+#btn_mostar_password{
+    position: absolute;
+    top: 22;
+    right: 0;
+
 }

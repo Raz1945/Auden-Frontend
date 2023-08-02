@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 import { NavLink } from 'react-router-dom';
 import './estilo.css';
+import Flecha from '../Login/flechaHaciaAtras';
 
 function Cuenta({ email }) {
   const [name, setName] = useState('');
@@ -71,7 +72,9 @@ function Cuenta({ email }) {
     <>
       <div className='Main_box'>
         <div className='header'>
-          <button className='btn_offborder btn_pages'>←</button>
+          <NavLink to='/register' className='btn_offborder'>
+            <Flecha />
+          </NavLink>
           <p>Registro de cuenta</p>
         </div>
         <div className='box_login'>

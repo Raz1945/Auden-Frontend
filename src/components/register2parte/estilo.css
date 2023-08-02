@@ -1,6 +1,4 @@
-p{
-    margin: 0;
-}
+/* 
 .box_btn_terminos{
     display: flex;
     flex-direction: row;
@@ -23,15 +21,8 @@ p{
     color: white;
     
 }
+ */
 
-
-input{
-    border-radius: 0px 40px;
-    width: 80vw;
-    height: 40px;
-    border-radius: 0px 16px 0px 16px;
-
-}
 
 .password_input {
     display: flex;
@@ -41,11 +32,11 @@ input{
     position: relative;
 } 
 /* Estilos para el input de contraseña */
-.password-input input {
+/* .password-input input {
     flex: 1;
     border: none;
     outline: none;
-}
+} */
   
   /* Estilos para el botón de mostrar/ocultar contraseña */
 .password_toggle_btn {
