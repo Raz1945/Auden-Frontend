@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import { NavLink } from 'react-router-dom';
 import './estilo.css';
 
+
 function Cuenta({ email }) {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -71,7 +72,9 @@ function Cuenta({ email }) {
     <>
       <div className='Main_box'>
         <div className='header'>
-          <button className='btn_offborder btn_pages'>←</button>
+            <NavLink to='/inicio' className='arrow_position_2'>
+              ←
+            </NavLink>
           <p>Registro de cuenta</p>
         </div>
         <div className='box_login'>
@@ -107,7 +110,7 @@ function Cuenta({ email }) {
           )}
           <NavLink to='/dashboard/home' className='btn_continue'>
             <button onClick={handleRegister} className={`btn_ ${isFormComplete ? 'btn_complete' : ''}`}>
-            Continuar
+              Continuar
             </button>   
           </NavLink>
         </div>

@@ -10,7 +10,7 @@ import Profile from '../components/Profile/Profile';
 import MusicaContextual from '../components/MusicaContextual/MusicaContextual';
 import Inicio from '../components/inicio/inicio';
 import Cuenta from '../components/register2parte/crearcuenta';
-import RContrasena from '../components/olvidarContraseña/olvidarcontraseña';
+import RContrasena from '../components/olvidarContrasena/olvidarcontrasena';
 import Configuration from '../components/Configuracion/Configuration';
 import Playlist from '../components/Playlist/playlist';
 

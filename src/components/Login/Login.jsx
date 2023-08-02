@@ -4,6 +4,9 @@ import { useAuth } from '../../context/AuthContext';
 import { NavLink } from 'react-router-dom';
 import './estilo.css';
 
+
+
+
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,12 +33,14 @@ function Login() {
         console.log("token:", response.data.accessToken);
 
         setToken(response.data.accessToken);
+        localStorage.setItem('jwtToken', response.data.accessToken);
         window.location.href = '/dashboard';
       } else {
         console.error('Error en el inicio de sesión:', response.data.message);
       }
     } catch (error) {
       console.error('Error en el inicio de sesión:', error);
+      console.log("no existe esa cuenta")
     }
   };
 
@@ -47,25 +52,30 @@ function Login() {
     <>
       <div className='Main_box'>
         <div className='header'>
-          <button className='btn_offborder btn_pages'>←</button>
-          <p>Iniciar sesión</p>
+          <NavLink to='/inicio' className='btn_offborder arrow_position'>
+            ←
+          </NavLink>
+          <p className='title_login'>Iniciar sesión</p>
         </div>
         <div className='box_login'>
-          <p>Nombre de usuario o E-mail:</p>
-          <input type="email" onChange={(e) => setEmail(e.target.value)} onBlur={checkFormCompleteness} />
-          <p>Contraseña:</p>
-          <div className="password-input">
-            <input id='input_password' type={showPassword ? "text" : "password"} onChange={(e) => setPassword(e.target.value)} onBlur={checkFormCompleteness} />
-            <button type="button" onClick={togglePasswordVisibility}>
+          <p className='margenes_Abajo'>Nombre de usuario o E-mail:</p>
+          <input type="email" onChange={(e) => setEmail(e.target.value)} onBlur={checkFormCompleteness} className="inputs_tamaño margenes_Abajo"/>
+          <p className='margenes_Abajo'>Contraseña:</p>
+          <div className="password_input">
+            <input id='input_password' type={showPassword ? "text" : "password"} onChange={(e) => setPassword(e.target.value)} onBlur={checkFormCompleteness} className="inputs_tamaño margenes_Abajo"/>
+            <button type="button" id='btn_mostar_password' onClick={togglePasswordVisibility}>
               {showPassword ? "Ocultar" : "Mostrar"}
             </button>
           </div>
-          <button onClick={handleLogin} className={`btn_ ${isFormComplete ? 'btn_complete' : ''}`}>
-            Iniciar sesión
-          </button>
-          <NavLink to='/Recuperarcontraseña' className='btn_offborder'>
-            ¿Olvidaste tu contraseña?
-          </NavLink>
+          <div className='box_btn_login_forgotpassword'>
+            <button onClick={handleLogin} className={`btn_ margenes_Abajo ${isFormComplete ? 'btn_complete' : ''}`}>
+              Iniciar sesión
+            </button>
+            <NavLink to='/Recuperarcontrasena' className='btn_offborder'>
+              ¿Olvidaste tu contraseña?
+            </NavLink>
+          </div>
+         
         </div>
       </div>
     </>

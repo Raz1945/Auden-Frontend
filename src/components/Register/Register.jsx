@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Cuenta from '../register2parte/crearcuenta';
+
 
 function EmailInput() {
   const [email, setEmail] = useState('');
@@ -17,13 +19,15 @@ function EmailInput() {
   };
   const isEmailValid = true;
   return (
-    <div className="Main_box">
+    <div className="Main_box_2">
       {mostrarCuenta ? (
         <Cuenta email={email} />
       ) : (
         <>
-          <div className='header'>
-            <button className='btn_offborder btn_pages'>←</button>
+          <div className='box_arrow_title'>
+            <NavLink to='/inicio' className='arrow_position_2'>
+              ←
+            </NavLink>
             <p>Crear cuenta</p>
           </div>
           <p>¿Cuál es tu correo electrónico?</p>
