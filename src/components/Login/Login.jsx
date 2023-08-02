@@ -40,7 +40,7 @@ function Login() {
       }
     } catch (error) {
       console.error('Error en el inicio de sesión:', error);
-      alert("no existe esa cuenta")
+      console.log("no existe esa cuenta")
     }
   };
 
@@ -71,7 +71,7 @@ function Login() {
             <button onClick={handleLogin} className={`btn_ margenes_Abajo ${isFormComplete ? 'btn_complete' : ''}`}>
               Iniciar sesión
             </button>
-            <NavLink to='/Recuperarcontraseña' className='btn_offborder'>
+            <NavLink to='/Recuperarcontrasena' className='btn_offborder'>
               ¿Olvidaste tu contraseña?
             </NavLink>
           </div>
