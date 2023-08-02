@@ -67,20 +67,29 @@ function Cuenta({ email }) {
     setPassword(newPassword);
     setIsPasswordValid(newPassword.length >= 8);
   };
+  const [isChecked, setChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setChecked(!isChecked);
+    console.log('Checkbox is now ' + (!isChecked ? 'checked' : 'unchecked'));
+  };
+
 
   return (
     <>
-      <div className='Main_box'>
-        <div className='header'>
-            <NavLink to='/inicio' className='arrow_position_2'>
+      <div className='Main_box_3'>
+        <div className='title_4'>
+            <NavLink to='/inicio' className='arrow_position_3'>
               ←
             </NavLink>
-          <p>Registro de cuenta</p>
+          <p className='title_crearcuenta_1'>Crear Cuenta</p>
         </div>
+        <p className='title_main_1'>Ingresa un nombre de usuario y contraseña.</p>
         <div className='box_login'>
           <p>Nombre:</p>
           <input
             type="text"
+            className='inputs_tamaño_3'
             onBlur={checkFormCompleteness}
             onChange={handleNameChange}
             style={{ borderColor: isNameAvailable ? (isFormComplete ? '#ccc' : '#ccc') : 'red' }}
@@ -94,12 +103,13 @@ function Cuenta({ email }) {
           <div className="password-input">
             <input
               id='input_password'
+              className='inputs_tamaño_3'
               type={showPassword ? "text" : "password"}
               onChange={handlePasswordChange}
               onBlur={checkFormCompleteness}
               style={{ borderColor: isPasswordValid ? (isFormComplete ? '#ccc' : '#ccc') : 'red' }}
             />
-            <button type="button" onClick={togglePasswordVisibility}>
+            <button type="button" className='btn_mostar_password_2_box' onClick={togglePasswordVisibility}>
               {showPassword ? "Ocultar" : "Mostrar"}
             </button>
           </div>
@@ -108,6 +118,15 @@ function Cuenta({ email }) {
               La contraseña debe tener al menos 8 caracteres.
             </p>
           )}
+          <div className='box_checkbox'>
+            <label>
+              <input type="checkbox" className='checkbox' checked={isChecked} onChange={handleCheckboxChange} />
+            </label>
+            <p>He leído y acepto los</p>
+            <p className='title_orange'>Términos</p>
+            <p>y</p>
+            <p className='title_orange'>Condiciones.</p>
+          </div>
           <NavLink to='/dashboard/home' className='btn_continue'>
             <button onClick={handleRegister} className={`btn_ ${isFormComplete ? 'btn_complete' : ''}`}>
               Continuar

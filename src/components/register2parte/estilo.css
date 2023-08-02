@@ -1,29 +1,68 @@
-/* 
-.box_btn_terminos{
+.Main_box_3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    width: 100%;
+    height: 100vh;
+}
+.box_checkbox{
     display: flex;
     flex-direction: row;
-    font-size: 13px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
-.orangeText{
-    color:#FF8E0A;
+.arrow_position_3{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-size: 25px;
+    margin-top: 18px;
 }
-.btn_terminos{
-    margin-top: 0;
-}
-.btn_login {
-    background-color: rgb(165, 165, 165);
-    color: #fff;
-    cursor: not-allowed;
-}
-.btn_login.enabled {
+/* checkbox */
+.checkbox{
+    margin-right: 10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 0px 8px 0px 8px;
+    border: 3px;
+    border-color: #BFC0C1;
 
-    background-color: #FF8E0A;
-    color: white;
-    
 }
- */
+
+/* input */
+.inputs_tamaño_3{
+    border-radius: 0px 16px 0px 16px;
+    width: 320px;
+    height: 38px ;
+    margin-top: 15px;
+
+}
+/* boton */
+.btn_mostar_password_2_box{
+    position: absolute;
+    top: 270px;
+    left: 300px;
+}
+/* title */
+.title_orange{
+    color: orange;
+}
+.title_main_1{
+    margin-left: 10px;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 60px;
+}
+.title_crearcuenta_1{
+    margin-left: 10px;
+    margin-top: 24px;
+}
 
 
+
+/* ---------------- */
 .password_input {
     display: flex;
     align-items: center;
@@ -31,14 +70,7 @@
     padding: 4px;
     position: relative;
 } 
-/* Estilos para el input de contraseña */
-/* .password-input input {
-    flex: 1;
-    border: none;
-    outline: none;
-} */
-  
-  /* Estilos para el botón de mostrar/ocultar contraseña */
+/* Estilos para el botón de mostrar/ocultar contraseña */
 .password_toggle_btn {
     position: absolute;
     right: 8px;
