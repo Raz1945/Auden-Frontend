@@ -28,7 +28,13 @@
     border-radius: 0px 8px 0px 8px;
     border: 3px;
     border-color: #BFC0C1;
-
+}
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"]:checked + img {
+    /* Aquí puedes ajustar la imagen personalizada o cambiarla por una diferente */
+    content: url("/icons/small/others/checkbox1.svg");
 }
 
 /* input */
@@ -42,10 +48,12 @@
 /* boton */
 .btn_mostar_password_2_box{
     position: absolute;
-    top: 270px;
+    top: 350px;
     left: 300px;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
 }
-/* title */
+/* title y text */
 .title_orange{
     color: orange;
 }
@@ -59,7 +67,12 @@
     margin-left: 10px;
     margin-top: 24px;
 }
-
+.text_terminosYcondiciones{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-left: 10px;
+}
 
 
 /* ---------------- */

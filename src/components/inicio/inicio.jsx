@@ -18,8 +18,8 @@ const Inicio = () => {
                 <NavLink to='/register' className='btn btn_orange btnMargin'>
                   Registrarse Gratis
                 </NavLink>
-                <button className='btn btn_wborders btnMargin'>Continuar con google</button>
-                <button className='btn btn_wborders btnMargin'>continuar con apple</button>
+                <button className='btn btn_wborders btnMargin'><img src="/icons/small/others/google1.svg" alt="" /> Continuar con google</button>
+                <button className='btn btn_wborders btnMargin'><img src="/icons/small/others/apple1.svg" alt="" />continuar con apple</button>
               </div>
 
               <NavLink to='/login' className='btn_offborders btnMargin pepew'>
