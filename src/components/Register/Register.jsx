@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import './estilo.css';
 import Cuenta from '../register2parte/crearcuenta';
 
 
@@ -28,19 +28,23 @@ function EmailInput() {
             <NavLink to='/inicio' className='arrow_position_2'>
               ←
             </NavLink>
-            <p>Crear cuenta</p>
+            <p className='title_2'>Crear cuenta</p>
           </div>
-          <p>¿Cuál es tu correo electrónico?</p>
-          <label htmlFor="email">Correo electrónico:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
+          <p className='title_3'>¿Cuál es tu correo electrónico?</p>
+          <div className='box_inputs_tamaño_2'>
+            <label htmlFor="email">Correo electrónico:</label>
+            <input
+              className='inputs_tamaño_2'
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </div>
+          
           <button
-            className="btn_orange btn btn_crearcuenta"
+            className="btn_orange_two"
             onClick={handleContinuar}
             disabled={!isEmailValid} // Deshabilitar el botón si el email no es válido
           >

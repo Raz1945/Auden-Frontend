@@ -1,9 +1,4 @@
-/* .btn_crearcuenta{
-    margin-top: 300px;
-}
-p{
-    margin-bottom: 40px;
-} */
+
 .Main_box_2{
     display: flex;
     flex-direction: column;
@@ -17,9 +12,50 @@ p{
     margin-bottom: 50px;
 
 }
-/* .arrow_position_2{
+.arrow_position_2{
     position: absolute;
     top: 0;
-    left: 0;
+    left: 20px;
+    font-size: 25px;
+    margin-top: 18px;
+
+}
+.box_inputs_tamaño_2{
+    margin-left: 20px;
+    margin-bottom: 400px;
+    margin-top: 40px;
     font-size: 20px;
-} */
+
+}
+/* botones */
+.btn_orange_two{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #FF8E0A;
+    color: white;
+    font-weight: 500; 
+    width: 320px;
+    height: 38px ;
+    border-radius: 0px 16px 0px 16px;
+    margin-left: 20px;
+}
+/* input */
+.inputs_tamaño_2{
+    border-radius: 0px 16px 0px 16px;
+    width: 320px;
+    height: 38px ;
+    margin-top: 15px;
+
+}
+/* title */
+.title_2{
+    margin-left: 130px;
+    margin-top: 24px;
+}
+.title_3{
+    margin-left: 0px;
+    font-size: 26px;
+    text-align: center;
+
+}
