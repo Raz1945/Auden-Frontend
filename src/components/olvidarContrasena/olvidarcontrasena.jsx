@@ -1,16 +1,15 @@
-import { Link } from "react-router-dom";
 import './estilo.css';
 import React, { useState } from 'react';
-import Flecha from '../Login/flechaHaciaAtras';
+
 import { NavLink } from 'react-router-dom';
 function RContrasena() {
   return (
     
     <div className="Main_box">
       <div className='header'>
-        <NavLink to='/login' className='btn_offborder'>
-          <Flecha />
-        </NavLink>
+          <NavLink to='/login' className='arrow_position_2'>
+            ←
+          </NavLink>
         <p>Recuperar Cuenta</p>
       </div>
       <label htmlFor="email">Nombre de usuario o E-mail</label>
